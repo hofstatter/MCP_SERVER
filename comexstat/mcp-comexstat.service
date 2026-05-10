@@ -1,0 +1,14 @@
+[Unit]
+Description=MCP Server - ComexStat
+After=network.target
+
+[Service]
+Type=simple
+User=herbert
+WorkingDirectory=/opt/mcp-comexstat
+ExecStart=/opt/mcp-comexstat/venv/bin/python3 /opt/mcp-comexstat/server.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
